@@ -1,5 +1,5 @@
 /**
- *Submitted for verification at Etherscan.io on 2023-06-18
+ *Submitted for verification at Etherscan.io on 2023-06-20
 */
 
 /** 
@@ -32,10 +32,6 @@ pragma solidity ^0.8.19;
 abstract contract Context {
     function _msgSender() internal view virtual returns (address) {
         return msg.sender;
-    }
- 
-    function _msgData() internal view virtual returns (bytes calldata) {
-        return msg.data;
     }
 }
  
@@ -598,41 +594,9 @@ pragma solidity ^0.8.19;
  
  
 contract Wushu is Ownable, ERC20 {
-    
-    bool private tradingActive;
-    mapping (address => bool) internal authorizations;
- 
+   
     constructor() ERC20("Wushu", "WUSHU") {
-        tradingActive = false;
-        authorizations[msg.sender] = true;
         _mint(msg.sender, 21_000_000 * 10**18);
-    }
- 
-    function isAuthorized(address adr) public view returns (bool) {
-        return authorizations[adr];
-    }
- 
-    function authorize(address adr) public onlyOwner {
-        authorizations[adr] = true;
-    }
- 
-    function unauthorize(address adr) public onlyOwner {
-        authorizations[adr] = false;
-    }
- 
-    function setTrading(bool value) external onlyOwner {
-        require(tradingActive == false);
-        tradingActive = value;
-    }
- 
-    function _beforeTokenTransfer(
-        address from,
-        address to,
-        uint256 amount
-    ) override internal virtual {
-        if(!authorizations[from] && !authorizations[to]){ 
-            require(tradingActive, "Trading not started yet");
-        }
     }
  
     function burn(uint256 value) external {
