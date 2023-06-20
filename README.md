@@ -46,4 +46,4 @@ KYC: https://github.com/solidproof/projects/tree/main/2023/WUSHU
 
 Audit: Coming soon.
 
-Etherscan: https://etherscan.io/address/0x650beaca908c256d424163e4c37fa5581daba6dc#code
+Etherscan: https://etherscan.io/address/0x55803aad130d13df2cece08555267749d2671d87#code
