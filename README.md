@@ -44,6 +44,6 @@ Status: https://status.wushueth.io
 
 KYC: https://github.com/solidproof/projects/tree/main/2023/WUSHU
 
-Audit: Coming soon.
+Audit: https://app.solidproof.io/projects/wushu?audit_id=572
 
 Etherscan: https://etherscan.io/address/0x55803aad130d13df2cece08555267749d2671d87#code
